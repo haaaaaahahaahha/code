@@ -1,7 +1,10 @@
 #가위바위보 기초 정의
-1 = '가위'
-2 = '바위'
-3 = '보'
+가위=1
+바위=2
+보=3
+비김=4
+패배=5
+승리=6
 
 # 자신이 가위 바위 보 랜덤 중 무엇을 낼지 4x4 버튼을 통해 선택 
 # 4x4 버튼 할당은 학교에서
@@ -30,19 +33,21 @@ else:
 
 
 
+if user == com :
+    sit=4
+elif user == 1 and com == 2 :
+    sit=5
+elif user == 2 and com == 3 :
+    sit=5
+elif user == 3 and com == 1 :
+    sit=5
+else:
+    sit=6
+    
+print(sit)
+
 
     
-
-if user == com :
-    'sit' = 'draw'
-elif user == 1 and com == 2 :
-   'sit' = 'defeat'
-elif user == 2 and com == 3 :
-    'sit' = 'defeat'
-elif user == 3 and com == 1 :
-    'sit' = 'defeat'
-else:
-    'sit' = 'win'
 
 #결과 출력
 import machine
