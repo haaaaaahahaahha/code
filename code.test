@@ -1,0 +1,69 @@
+#가위바위보 기초 정의
+1 = '가위'
+2 = '바위'
+3 = '보'
+
+# 자신이 가위 바위 보 랜덤 중 무엇을 낼지 4x4 버튼을 통해 선택 
+# 4x4 버튼 할당은 학교에서
+if button_ :
+    user = 1
+elif button_ :
+    user = 2
+else button_ :
+    user = 3
+
+#핵심 코드(유저와 컴퓨터의 가위 바위 보 비교)
+import random
+import machine
+import utime
+pin = machine.Pin(32, machine.Pin.OUT)
+pwm = machine.PWM(pin,freq=50)
+
+
+com = random.randint(1,3)
+if com == 1 :
+    
+elif com == 2 :
+    
+else:
+    
+
+
+
+
+    
+
+if user == com :
+    'sit' = 'draw'
+elif user == 1 and com == 2 :
+   'sit' = 'defeat'
+elif user == 2 and com == 3 :
+    'sit' = 'defeat'
+elif user == 3 and com == 1 :
+    'sit' = 'defeat'
+else:
+    'sit' = 'win'
+
+#결과 출력
+import machine
+import utime
+import i2clcd1602
+
+i2c = machine.I2C(1, sda=machine.Pin(21), scl=machine.Pin(22))
+addreesslist=i2c.scan() # list
+I2C_ADDR = int(addreesslist[0]) #0x27
+
+lcd = i2clcd1602.LCD1602(i2c, addr=I2C_ADDR)
+
+# LCD 켜기
+lcd.on()
+
+utime.sleep(2)
+
+lcd.clear()
+lcd.char(ord("a"),2,1)
+
+utime.sleep(2)
+
+lcd.clear()
+lcd.puts('sit',0,0)
