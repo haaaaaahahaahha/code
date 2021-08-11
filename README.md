@@ -1,4 +1,9 @@
+모터는 아날로그
+
+
 # code
+
+
 link
 https://esp32io.com/tutorials/esp32-keypad
 #include <Keypad.h>
