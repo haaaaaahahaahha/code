@@ -1,4 +1,6 @@
 모터는 아날로그
+c는 out
+r은 in
 
 
 # code
